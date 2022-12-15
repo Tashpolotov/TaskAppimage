@@ -37,7 +37,6 @@
             android:id="@+id/iv_foto"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:onClick="pickedPhoto"
             android:scaleType="centerCrop"
             android:src="@drawable/kia"/>
 
