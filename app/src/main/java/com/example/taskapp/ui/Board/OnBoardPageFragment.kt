@@ -9,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.example.taskapp.R
 import com.example.taskapp.databinding.FragmentOnBoardPageBinding
+import com.example.taskapp.ui.util.Preferences
 
 
 class OnBoardPageFragment(
@@ -16,14 +17,15 @@ class OnBoardPageFragment(
     var listenerNext: () -> Unit
 ) : Fragment() {
 
-        private lateinit var binding: FragmentOnBoardPageBinding
+    private lateinit var binding: FragmentOnBoardPageBinding
 
-       override fun onCreateView(
+
+    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-           binding = FragmentOnBoardPageBinding.inflate(LayoutInflater.from(context), container, false)
+        binding = FragmentOnBoardPageBinding.inflate(LayoutInflater.from(context), container, false)
 
         return binding.root
     }
@@ -61,6 +63,7 @@ class OnBoardPageFragment(
 
         binding.btnStart.setOnClickListener{
             findNavController().navigate(R.id.navigation_home)
+            Preferences(requireContext(),).setBoardingShowed(true)
         }
 
     }

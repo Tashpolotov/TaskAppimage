@@ -9,6 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.taskapp.databinding.ActivityMainBinding
+import com.example.taskapp.ui.util.Preferences
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,7 +33,12 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
-        navController.navigate(R.id.onBoardFragment)
+        if (Preferences(applicationContext,).isBoardingShowed()){
+            navController.navigate(R.id.navigation_home)
+        } else {
+            navController.navigate(R.id.onBoardFragment)
+        }
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 

@@ -31,12 +31,7 @@ class OnBoardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val adapter = BoardAdapter(childFragmentManager, this:: onSkipClick, this:: onNextClick)
         binding.vpBoard.adapter = adapter
-        var indikator = binding.vpBoard
-        var indicator = binding.indikatorPager
-        indicator.setViewPager(indikator)
-        indicator.createIndicators(3,0)
-        adapter.registerDataSetObserver(indicator.dataSetObserver)
-
+        binding.dotsIndicator.attachTo(binding.vpBoard)
     }
 
     private fun onSkipClick(){

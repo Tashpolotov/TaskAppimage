@@ -34,7 +34,7 @@ class HomeFragment : Fragment() {
 
         initView()
         initListeners()
-       return  binding.root
+        return  binding.root
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,9 +56,8 @@ class HomeFragment : Fragment() {
         }
 
         setFragmentResultListener("new_task") { key, bundle ->
-            val title = bundle.get("title")
-            val description = bundle.get("desc")
-            taskAdapter.addTask(TaskModel(title.toString(), description.toString()))
+           val task = bundle.getSerializable("data") as TaskModel
+            taskAdapter.addTask(task)
 
         }
 

@@ -2,6 +2,7 @@ package com.example.taskapp
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskapp.databinding.TaskItemBinding
 
@@ -23,7 +24,7 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-       holder.bind(taskList[position])
+        holder.bind(taskList[position])
     }
 
     override fun getItemCount(): Int = taskList.size
@@ -33,6 +34,7 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
         fun bind (taskModel: TaskModel){
             binding.tvTitle.text = taskModel.title
             binding.tvDesc.text = taskModel.descriptor
+            binding.imgItem.setImageURI(taskModel.imgUri.toUri())
         }
     }
 }

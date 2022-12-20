@@ -16,10 +16,10 @@ class BoardAdapter (fm: FragmentManager,
         false),
         BoardModel(R.drawable.img2,
             "Share your crazy idea ^_^",
-        "You can easily share with your report, list or schedule and it's convenient",
+            "You can easily share with your report, list or schedule and it's convenient",
             false),
         BoardModel(R.drawable.icimg3, "Flexibility",
-        "Your note with you at home, at work, even at the resort", true)
+            "Your note with you at home, at work, even at the resort", true)
     )
 
 
