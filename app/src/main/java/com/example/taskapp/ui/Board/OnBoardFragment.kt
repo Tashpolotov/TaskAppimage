@@ -32,7 +32,6 @@ class OnBoardFragment : Fragment() {
         val adapter = BoardAdapter(childFragmentManager, this:: onSkipClick, this:: onNextClick)
         binding.vpBoard.adapter = adapter
         var indikator = binding.vpBoard
-        indikator.adapter=adapter
         var indicator = binding.indikatorPager
         indicator.setViewPager(indikator)
         indicator.createIndicators(3,0)
